@@ -1,0 +1,20 @@
+/* hérna eru reglur sem gilda um alla síðuna */
+
+body {
+  font-family: "roboto", sans-serif;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+  /* ef row er 100% with en við viljum bæta við padding kemst það ekki fyrir, border-box endurreiknar það */
+}
+
+a {
+  color: $mainOrange;
+}

@@ -1,0 +1,14 @@
+/* Þessi mainfile er eins og uppskrift sem vísar í hráefni */
+@import "normalize.css";
+@import "base/_variables";
+@import "base/_mixins";
+@import "base/_global";
+/* hérna er ég að setja annað sheet inn í þetta, þarf ekki að skrifa .css*/
+@import "modules/_large-hero";
+/* þurfti að installa npm postcss-import í transmission, setja það inn í gulpfile.js */
+@import "modules/_btn";
+@import "modules/_wrapper";
+@import "modules/_page-section";
+@import "modules/_headline";
+@import "modules/_row";
+@import "modules/_generic-content-container";
