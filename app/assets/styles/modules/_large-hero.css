@@ -7,7 +7,7 @@
   }
 
   &__text-content {
-    /* hérna set ég & til að .large-hero komi fyrir framan nafnið í breyttu skjali */
+  /* hérna set ég & til að .large-hero komi fyrir framan nafnið í breyttu skjali */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -25,6 +25,7 @@
     @mixin atSmall {
       font-size: 4.8rem;
     }
+
   }
 
   &__subtitle {
@@ -34,8 +35,9 @@
     margin: 0;
 
     @mixin atSmall {
-      font size: 2.9rem;
+      font-size: 2.9rem;
     }
+
   }
 
   &__description {

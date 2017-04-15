@@ -418,7 +418,7 @@ a {
 }
 @media (min-width: 530px) {
   .large-hero__subtitle {
-    font: 2.9rem;
+    font-size: 2.9rem;
   }
 }
 .large-hero__description {
@@ -454,7 +454,7 @@ a {
 }
 @media (min-width: 530px) {
   .btn--large {
-    font-size: 1.25;
+    font-size: 1.25rem;
   }
 }
 .wrapper {
@@ -470,6 +470,26 @@ a {
 .wrapper--medium {
   max-width: 976px;
 }
+.wrapper--no-padding-until-medium {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 800px) {
+  .wrapper--no-padding-until-medium {/* ef stærra en medium nota þá */
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+.wrapper--no-padding-until-large {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 1010px) {
+  .wrapper--no-padding-until-large {/* ef stærra en large nota þá */
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
 .wrapper .wrapper {
   padding-left: 0;
   padding-right: 0;
@@ -483,7 +503,7 @@ a {
   }
 }
 .page-section {
-  padding: 1. 2rem 0;
+  padding: 1.2rem 0;
 
 }
 @media (min-width: 800px) {
@@ -491,9 +511,34 @@ a {
     padding: 4.5rem 0;/* 4.5 top and bottom padding & 0 horizental padding */
   }
 }
+.page-section--no-b-padding-until-medium {
+  padding-bottom: 0;
+}
+@media (min-width: 800px) {
+  .page-section--no-b-padding-until-medium {
+    padding-bottom: 4.5rem;
+  }
+}
+.page-section--no-b-padding-until-large {
+  padding-bottom: 0;
+}
+@media (min-width: 1010px) {
+  .page-section--no-b-padding-until-large {
+    padding-bottom: 4.5rem;
+  }
+}
 .page-section--blue {
   background-color: #2f5572;
   color: #FFF;
+}
+.page-section--testimonials {
+  background-color: #e0e6ef;
+}
+@media (min-width: 1010px) {
+  .page-section--testimonials {
+    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background-size: cover;
+  }
 }
 .headline {
   font-size: 1.9rem;
@@ -516,7 +561,7 @@ a {
 }
 @media (min-width: 530px) {
   .headline--small {
-    font-size: 1.975rem;
+    font-size: 1.875rem;
   }
 }
 .headline--narrow {
@@ -526,6 +571,9 @@ a {
 }
 .headline--light {
   font-weight: 100;
+}
+.headline strong {
+  font-weight: 400;
 }
 .headline--b-margin-small {
   margin-bottom: .5em;/* we can reuse it on lines that have different font sizes and it will always scale with it really nicely */
@@ -542,17 +590,26 @@ a {
   display: table;
 }
 /* creating fake content, adds blank space after all of the content */
+.row--t-padding {
+  padding-top: 80px;
+}
 .row--gutters {
   margin-right: -65px;/* á móti gutters div því dálkurinn fer út fyrir */
 }
 .row--gutters-large {
   margin-right: -100px;
 }
-.row--gutters > div {/* hérna er ég að velja öll div inn í --gutters */
+.row--gutters-small {
+  margin-right: -45px;
+}
+.row--gutters > div {
   padding-right: 65px;
 }
-.row--gutters-large  > div {
+.row--gutters-large > div {
   padding-right: 100px;
+}
+.row--gutters-small > div {
+  padding-right: 45px;
 }
 .row__b-margin-until-medium {
   margin-bottom: 1rem;
@@ -579,6 +636,58 @@ a {
   .row__medium-8--smaller {
     width: 63%;
   }
+}
+@media (min-width: 1010px) {
+  .row__b-margin-until-large {
+    margin-bottom: 0;
+  }
+  .row__large-4 {
+    float: left;
+    width: 33.33%;
+  }
+  .row__large-4--larger {
+    width: 37%;
+  }
+  .row__large-6 {
+    float: left;
+    width: 50%;
+  }
+  .row__large-8 {
+    float: left;
+    width: 66.66%;
+  }
+  .row__large-8--smaller {
+    width: 63%;
+  }
+}
+/* Begin Equal Height Rules */
+@media (min-width: 800px) {
+  .row--equal-height-at-medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/* if we tell each colom to be flex rather than float to the left the content of each will flex to match the tallest element */
+.row--equal-height-at-medium > div {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 1010px) {
+  .row--equal-height-at-large {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/* if we tell each colom to be flex rather than float to the left the content of each will flex to match the tallest element */
+.row--equal-height-at-large > div {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .generic-content-container p {
   font-weight: 300;
@@ -608,25 +717,28 @@ a {
 .section-title strong {
   font-weight: 500;
 }
+.section-title--blue {
+  color: #2f5572;
+}
 .section-title__icon {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0.6rem;
+  margin-bottom: .6rem;
 }
 @media (min-width: 530px) {
   .section-title__icon {
-    margin-right: 0.5rem;
+    position: relative;
+    top: 8px;
+    margin-right: .5rem;
     margin-left: 0;
+    margin-bottom: 0;
     display: inline-block;
-    margin: 0;
   }
 }
 .feature-item {
-
   position: relative;
   padding-bottom: 2.5rem;
-
 }
 @media (min-width: 530px) {
   .feature-item {
@@ -646,14 +758,53 @@ a {
 .feature-item__title {
   font-size: 1.6rem;
   font-weight: 300;
-  margin-top: 0.7em;
-  margin-bottom: 0.8rem;
+  margin-top: .7em;
+  margin-bottom: .8rem;
   text-align: center;
 }
 @media (min-width: 530px) {
   .feature-item__title {
-    font-size: 1.875rem;
-    margin-top: 1em;
     text-align: left;
+    margin-top: 1em;
+    font-size: 1.875rem;
   }
+}
+.testimonial {
+  background-color: rgba(255, 255, 255, .8);
+  /* red, green, blue, alhpa transparrency */
+  padding: 0 18px 1px 18px;
+  margin-bottom: 98px;
+}
+@media (min-width: 1010px) {
+  .testimonial {
+    margin-bottom: 0;
+    padding: 0 1.8125rem 1px 1.8125rem;
+  }
+}
+.testimonial--last {
+  margin-bottom: 0;
+}
+.testimonial__photo {
+  border-radius: 80px;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;/* verðum að gera overflow svo það sjáist, og hafa stærðina inná */
+  margin: 0 auto -80px auto;
+  position: relative;
+  top: -80px;/* drögum myndina upp helming af því sem hún er stór*//* ath vantar inn á hans -> margin-bottom: -80px; *//* dregur textann upp því textinn veit ekki að myndin færðist ofa */
+  border: 6px solid rgba(255, 255, 255, .8);
+}
+.testimonial__title {
+  color: #2f5572;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+.testimonial__subtitle {
+  color: #d59541;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  margin: .25rem 0 1rem 0;
 }
