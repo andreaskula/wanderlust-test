@@ -12,13 +12,13 @@ cssImport = require("postcss-import"),
 mixins = require("postcss-mixins");
 
 
-gulp.task("styles", function() {
-  return gulp.src("./app/assets/styles/styles.css")
+gulp.task('styles', function() {
+  return gulp.src('./app/assets/styles/styles.css')
     .pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
     /* er að setja allt sem ég vil nota inn í pípuna */
-    .on("error", function(errorInfo) {
-      console.log(errorInfo.toString()); /* án þessarar línu sést ekki hvort það sé error, því gulp watch heldur áfram, með toString sleppum við öllum óþarfa texta */
-      this.emit("end");
+    .on('error', function(errorInfo) {
+      console.log(errorInfo.toString());
+      this.emit('end');
     })
     /* if an error occurs */
     /* without .on if an error occurs, it ends all other running gulp taksk (dafault behavior) */
